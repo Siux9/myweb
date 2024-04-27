@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>web</title>
+        <style>
+            body {
+                background-color: rgb(53, 49, 49);
+                color: rgb(11, 163, 11);
+                font-size: 20px;
+                display: flex;
+                justify-content: center; /* Zarovnání obsahu na horizontální ose */
+                align-items: center; /* Zarovnání obsahu na vertikální ose */
+                height: 100vh; /* Nastavení výšky na výšku okna prohlížeče */
+                margin: 0; /* Odstanění okrajů */
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="headline"></h1>
+        
+        <script>
+            var text = "Ahoj, toto je moje první webová stránka :)";
+            var index = 0;
+            var speed = 40; // Rychlost zobrazení písmen (v milisekundách)
+
+            function typeWriter() {
+                if (index < text.length) {
+                    document.getElementById("headline").innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+
+            // Spustit funkci typeWriter po načtení stránky
+            window.onload = function() {
+                typeWriter();
+            };
+        </script>
+    </body>
+</html>
